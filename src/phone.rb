@@ -1,5 +1,4 @@
 class Phone 
-
   attr_reader :phone
 
   def initialize (phone)
@@ -7,14 +6,7 @@ class Phone
   end
 
   def operator
-
-    result = 'Life' if life?
-
-    result = 'Mts' if mts?
-
-    result = 'Velcome' if velcome?
-    
-    result
+    life || mts || velcome
   end
 
   def valid?
@@ -35,4 +27,15 @@ class Phone
     phone.match?(/(\+375|80)(44)\d{3}\d{2}\d{2}/) || phone.match?(/(\+375|80)(29)(1|3|5|7|9)\d{6}/)
   end
 
+  def life
+    'Life' if life?
+  end
+
+  def mts
+    'Mts' if mts?
+  end
+
+  def velcome
+    'Velcome' if velcome?
+  end
 end
