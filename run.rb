@@ -10,4 +10,3 @@ if phone.valid?
 else
   puts 'Please enter correct phone number'
 end
-
