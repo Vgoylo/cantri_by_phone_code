@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_relative 'src/phone'
+require_relative 'lib/phone'
 
 puts 'Enter your phone number'
 
@@ -10,4 +10,3 @@ if phone.valid?
 else
   puts 'Please enter correct phone number'
 end
-
