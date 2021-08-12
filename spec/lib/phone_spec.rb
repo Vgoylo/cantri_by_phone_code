@@ -1,9 +1,15 @@
 require 'spec_helper'
 
 RSpec.describe Phone do 
-  describe "#submit" do
-    it "is marked as complete" do
-      expect(2 + 2).to eq 4
+  let!(:phone) { Phone.new(number) }
+
+  describe "#operator" do
+    context 'life' do     
+      let(:number) { '+375259038314' }
+    
+      it "return life" do
+        expect(phone.operator).to eq 'Life'
+      end
     end
   end
 end
