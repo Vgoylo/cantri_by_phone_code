@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_relative 'src/phone'
+require_relative 'lib/phone'
 
 puts 'Enter your phone number'
 

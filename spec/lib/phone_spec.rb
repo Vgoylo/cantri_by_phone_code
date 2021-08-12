@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-RSpec.discribe Phone do 
+RSpec.describe Phone do 
 end
