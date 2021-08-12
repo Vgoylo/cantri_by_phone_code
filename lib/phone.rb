@@ -20,7 +20,7 @@ class Phone
   end
 
   def mts?
-    phone.match?(/(\+375|80)(29|33)(2|4|6|8|9)\d{6}/)
+    phone.match?(/(\+375|80)(29(2|4|6|8)|33(6|9|3))\d{6}/)
   end
 
   def velcome?
