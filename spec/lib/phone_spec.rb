@@ -29,5 +29,29 @@ RSpec.describe Phone do
         end
       end
     end
+
+    context 'velcome' do 
+      let(:numbers) do 
+        ['+375331832636', 
+        '+37533832636', 
+        '+375332832636', 
+        '+375334832636', 
+        '+375335832636', 
+        '+375337832636',
+        '+375338832636',  
+        '80292132636', 
+        '80293832636', 
+        '80295832636', 
+        '80297832636',
+        '80299832636']
+      end
+     
+      it 'return velcome' do
+        numbers.each do|number|
+          phone = Phone.new(number)
+          expect(phone.operator).to eq 'Velcome'
+        end
+      end
+    end
   end
 end
