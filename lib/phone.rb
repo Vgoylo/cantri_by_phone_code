@@ -20,11 +20,11 @@ class Phone
   end
 
   def mts?
-    phone.match?(/(\+375|80)(29|33)(2|4|6|8|9)\d{6}/)
+     phone.match?(/(\+375|80)(29(2|4|6|8)|33(6|9|3))\d{6}/)
   end
 
   def velcome?
-    phone.match?(/(\+375|80)(29|44)(1|3|5|7|9)\d{6}|\d{3}\d{2}\d{2}/) 
+    phone.match?(/(\+375|80)(29(1|3|9)|44(4|5|7))\d{6}/) 
   end
 
   def life
