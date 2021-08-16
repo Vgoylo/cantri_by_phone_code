@@ -11,6 +11,10 @@ class Phone
     life || mts || velcome
   end
 
+  def format
+    'hello'
+  end
+
   def valid?
     phone.match?(/(\+375|80)(29|44|33|25)\d{3}\d{2}\d{2}$/)
   end
