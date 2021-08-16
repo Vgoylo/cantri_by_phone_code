@@ -93,7 +93,7 @@ RSpec.describe Phone do
         let(:number) { '+375298832636dfghjk' }
       
         it 'is invalid' do
-          expect(phone.valid?).to eq false
+          expect(phone.valid?).to be_falsey
         end
       end
 
@@ -101,7 +101,7 @@ RSpec.describe Phone do
         let(:number) { '+375298832636df gh jk' }
       
         it 'is invalid' do
-          expect(phone.valid?).to eq false
+          expect(phone.valid?).to be_falsey
         end
       end
 
@@ -109,7 +109,7 @@ RSpec.describe Phone do
         let(:number) { '+375298832636df g-h jk' }
       
         it 'is invalid' do
-          expect(phone.valid?).to eq false
+          expect(phone.valid?).to be_falsey
         end
       end
 
@@ -117,7 +117,7 @@ RSpec.describe Phone do
         let(:number) { '3752  08448bnm98832636df g-h jk' }
       
         it 'is invalid' do
-          expect(phone.valid?).to eq false
+          expect(phone.valid?).to be_falsey
         end
       end
 
@@ -125,7 +125,7 @@ RSpec.describe Phone do
         let(:number) { '+375298832636==df g-h jk' }
       
         it 'is invalid' do
-          expect(phone.valid?).to eq false
+          expect(phone.valid?).to be_falsey
         end
       end
     end
