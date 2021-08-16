@@ -59,6 +59,30 @@ RSpec.describe Phone do
         expect(phone.valid?).to eq true
       end
     end  
+
+    context 'valid' do
+      let(:number) { '80291132636' }
+      
+      it 'is valid' do
+        expect(phone.valid?).to eq true
+      end
+    end 
+
+    context 'valid' do
+      let(:number) { '+375339832636' }
+      
+      it 'is valid' do
+        expect(phone.valid?).to eq true
+      end
+    end 
+
+    context 'valid' do
+      let(:number) { '80251132336' }
+      
+      it 'is valid' do
+        expect(phone.valid?).to eq true
+      end
+    end 
   end
 
   describe "#invalid?" do
@@ -104,8 +128,6 @@ RSpec.describe Phone do
           expect(phone.valid?).to eq false
         end
       end
-
-
     end
   end
 end
