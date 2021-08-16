@@ -10,7 +10,7 @@ class Phone
   end
 
   def valid?
-    phone.match?(/(\+375|80)(29|44|33|25)\d{3}\d{2}\d{2}/)  
+    phone.match?(/(\+375|80)(29|44|33|25)\d{3}\d{2}\d{2}$/)  
   end
 
   private

@@ -60,4 +60,52 @@ RSpec.describe Phone do
       end
     end  
   end
+
+  describe "#invalid?" do
+    let(:phone) { Phone.new(number) }
+
+    context 'invalid' do
+      context 'include letters' do 
+        let(:number) { '+375298832636dfghjk' }
+      
+        it 'is invalid' do
+          expect(phone.valid?).to eq false
+        end
+      end
+
+      context 'include letters && spaces ' do 
+        let(:number) { '+375298832636df gh jk' }
+      
+        it 'is invalid' do
+          expect(phone.valid?).to eq false
+        end
+      end
+
+      context 'include letters && spaces && \- ' do 
+        let(:number) { '+375298832636df g-h jk' }
+      
+        it 'is invalid' do
+          expect(phone.valid?).to eq false
+        end
+      end
+
+      context 'include letters && \s && \- error number' do 
+        let(:number) { '3752  08448bnm98832636df g-h jk' }
+      
+        it 'is invalid' do
+          expect(phone.valid?).to eq false
+        end
+      end
+
+      context 'include letters && = && \s && \- error number' do 
+        let(:number) { '+375298832636==df g-h jk' }
+      
+        it 'is invalid' do
+          expect(phone.valid?).to eq false
+        end
+      end
+
+
+    end
+  end
 end
