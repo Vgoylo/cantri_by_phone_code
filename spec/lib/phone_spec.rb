@@ -56,7 +56,7 @@ RSpec.describe Phone do
       let(:number) { '+375298832636' }
       
       it 'is valid' do
-        expect(phone.valid?).to eq true
+        expect(phone.valid?).to be_truthy
       end
     end  
 
@@ -64,7 +64,7 @@ RSpec.describe Phone do
       let(:number) { '80291132636' }
       
       it 'is valid' do
-        expect(phone.valid?).to eq true
+        expect(phone.valid?).to be_truthy
       end
     end 
 
@@ -72,7 +72,7 @@ RSpec.describe Phone do
       let(:number) { '+375339832636' }
       
       it 'is valid' do
-        expect(phone.valid?).to eq true
+        expect(phone.valid?).to be_truthy
       end
     end 
 
@@ -80,7 +80,7 @@ RSpec.describe Phone do
       let(:number) { '80251132336' }
       
       it 'is valid' do
-        expect(phone.valid?).to eq true
+        expect(phone.valid?).to be_truthy
       end
     end 
   end
