@@ -48,4 +48,16 @@ RSpec.describe Phone do
       end
     end
   end
+
+  describe "#valid?" do
+    let(:phone) { Phone.new(number) } 
+
+    context 'valid' do
+      let(:number) { '+375298832636' }
+      
+      it 'is valid' do
+        expect(phone.valid?).to eq true
+      end
+    end  
+  end
 end
