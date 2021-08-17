@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'pry'
 
 class Phone
@@ -12,10 +13,10 @@ class Phone
     life || mts || velcome
   end
 
-  def format 
+  def format
     if phone[0] == '+'
       format_with_plus
-    else 
+    else
       format_without_plus
     end
   end
@@ -42,7 +43,7 @@ class Phone
     part_3 = phone[4, 3]
     part_4 = phone[7, 2]
     part_5 = phone[9, 2]
-    
+
     "#{part_1}(#{part_2})-#{part_3}-#{part_4}-#{part_5}"
   end
 
