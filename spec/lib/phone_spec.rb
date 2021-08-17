@@ -51,6 +51,28 @@ RSpec.describe Phone do
     end
   end
 
+  describe '#format' do
+    context 'with plus' do
+      let(:phone) { Phone.new(number) }
+      let(:number) { '+375259038314' }
+      let(:correct_number_format) { '+375(25)-903-83-14' }
+
+      it 'returns number with correct format' do
+        expect(phone.format).to eq correct_number_format
+      end
+    end
+
+    context 'without plus' do
+      let(:phone) { Phone.new(number) }
+      let(:number) { '80298832636' }
+      let(:correct_number_format) { '80(29)-883-26-36' }
+
+      it 'return number with correct format' do
+        expect(phone.format).to eq correct_number_format
+      end
+    end
+  end
+
   describe '#valid?' do
     let(:phone) { Phone.new(number) }
 

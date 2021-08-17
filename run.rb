@@ -8,6 +8,7 @@ phone = Phone.new(gets.chomp)
 
 if phone.valid?
   puts phone.operator
+  puts "corect phone number #{phone.format}"
 else
   puts 'Please enter correct phone number'
 end

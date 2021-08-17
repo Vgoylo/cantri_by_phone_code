@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry'
+
 class Phone
   attr_reader :phone
 
@@ -11,11 +13,39 @@ class Phone
     life || mts || velcome
   end
 
+  def format
+    if phone[0] == '+'
+      format_with_plus
+    else
+      format_without_plus
+    end
+  end
+
   def valid?
     phone.match?(/(\+375|80)(29|44|33|25)\d{3}\d{2}\d{2}$/)
   end
 
   private
+
+  def format_with_plus
+    part_1 = phone[0, 4]
+    part_2 = phone[4, 2]
+    part_3 = phone[6, 3]
+    part_4 = phone[9, 2]
+    part_5 = phone[11, 2]
+
+    "#{part_1}(#{part_2})-#{part_3}-#{part_4}-#{part_5}"
+  end
+
+  def format_without_plus
+    part_1 = phone[0, 2]
+    part_2 = phone[2, 2]
+    part_3 = phone[4, 3]
+    part_4 = phone[7, 2]
+    part_5 = phone[9, 2]
+
+    "#{part_1}(#{part_2})-#{part_3}-#{part_4}-#{part_5}"
+  end
 
   def life?
     phone.match?(/(\+375|80)(25)\d{7}/)
